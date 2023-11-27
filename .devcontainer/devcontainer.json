@@ -1,0 +1,25 @@
+{
+    "name": "Github action - json schema doc generator",
+    "image": "mcr.microsoft.com/devcontainers/python:3-bullseye",
+    "features": {
+        "ghcr.io/rio/features/chezmoi:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postCreateCommand": ".devcontainer/init.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/usr/bin/zsh"
+                    }
+                }
+            },
+            "extensions": [
+                "GitHub.copilot",
+                "GitHub.vscode-github-actions"
+            ]
+       }
+    }
+}
