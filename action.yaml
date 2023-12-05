@@ -1,0 +1,26 @@
+author: Lars Nieuwenhuizen
+name: action-json-schema-docs
+description: Generate a markdown documentation file from a json schema
+
+inputs:
+  json-schema-directory:
+    description: 'The directory where the json schema files are located'
+    required: true
+  document-directory:
+    description: 'The directory where the documentation files will be stored'
+    required: true
+  examples-as-yaml:
+    description: 'If the examples created are in yaml format'
+    required: false
+    default: true
+
+
+runs:
+  using: composite
+  steps:
+    - name: Validate yaml file against json schema
+      shell: bash
+      run: |
+        cd ${GITHUB_ACTION_PATH}
+        python3 -m pip install . -r requirements.txt -q
+        python3 main.py ${{ inputs.json-schema-directory }} ${{ inputs.document-directory }} ${{ inputs.examples-as-yaml }}
