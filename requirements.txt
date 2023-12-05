@@ -1,0 +1,9 @@
+jsonschema2md==1.0.0
+Markdown==3.5.1
+Pycco==0.6.0
+Pygments==2.17.2
+pystache==0.6.5
+PyYAML==6.0.1
+setuptools==68.2.2
+smartypants==2.0.1
+wheel==0.41.3
